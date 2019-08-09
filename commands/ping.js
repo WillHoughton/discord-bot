@@ -1,4 +1,8 @@
+var config = require('../utils/config.json');
+var messages = require('../utils/messages.json');
+
+
+
 exports.run = (client, message, args) => {
-	message.channel.send("Pong :) ")
-	
+	return message.channel.send("My Ping: " + Math.round(client.ping) + ' ms')
 	}

@@ -30,55 +30,6 @@ client.on('ready', function(evt) {
             if (message.channel.type == "dm") {
                 return;
             }
-            if (message.content.startsWith(config.prefix + "ip")) {
-                i = require(`./commands/ip`);
-                i.run(client, message, args);
-                console.log("Successfully loaded IP command")
-            }
-            if (message.content.startsWith(config.prefix + "store")) {
-                s = require(`./commands/store`);
-                s.run(client, message, args);
-            }
-            if (message.content.startsWith(config.prefix + "forums")) {
-                f = require(`./commands/forums`);
-                f.run(client, message, args);
-            }
-            if (message.content.startsWith(config.prefix + "apply")) {
-                a = require(`./commands/apply`);
-                a.run(client, message, args);
-            }
-            if (message.content.startsWith(config.prefix + "status")) {
-                st = require(`./commands/status`);
-                st.run(client, message, args);
-            }
-            if (message.content.startsWith(config.prefix + "rules")) {
-                r = require(`./commands/rules`);
-                r.run(client, message, args);
-            }
-            if (message.content.startsWith(config.prefix + "say")) {
-                sa = require(`./commands/say`);
-                sa.run(client, message, args);
-            }
-            if (message.content.startsWith(config.prefix + "add")) {
-                a = require(`./commands/add`);
-                a.run(client, message, args);
-            }
-            if (message.content.startsWith(config.prefix + "remove")) {
-                ra = require(`./commands/remove`);
-                ra.run(client, message, args);
-            }
-            if (message.content.startsWith(config.prefix + "close")) {
-                c = require(`./commands/close`);
-                c.run(client, message, args);
-            }
-            if (message.content.startsWith(config.prefix + "new")) {
-                n = require(`./commands/new`);
-                n.run(client, message, args);
-            }
-            if (message.content.startsWith(config.prefix + "giveaway")) {
-                g = require(`./commands/giveaway`);
-                g.run(client, message, args);
-            }
             if (message.content.startsWith(config.prefix + "info")) {
                 i = require(`./commands/info`);
                 i.run(client, message, args);
@@ -86,6 +37,10 @@ client.on('ready', function(evt) {
             if (message.content.startsWith(config.prefix + "avatar")) {
                 a = require(`./commands/avatar`);
                 a.run(client, message, args);
+            }
+            if (message.content.startsWith(config.prefix + "ping")) {
+                p = require(`./commands/ping`);
+                p.run(client, message, args);
             }
             else return;
         } catch (err) {
