@@ -1,7 +1,12 @@
 var config = require('../utils/config.json');
-var messages = require('../utils/messages.json');
-
 
 exports.run = (client, message, args) => {
-  return message.channel.send("Your avatar is " + message.author.displayAvatarURL);
+  return message.author.send("Here's a link to your avatar:\n" + message.author.displayAvatarURL) && (channelMessage);
 }
+
+var channelMessage = message.channel.send({
+  embed: {
+    color: config.embedColor,
+    title: "Avatar sent to private messages"
+  }
+});

@@ -1,6 +1,12 @@
 {
     "gamePresence": "WATCHING",
     "gameInfo": "out for you | .help",
-    "prefix": "."
+    "prefix": ".",
+    "embedColor": "10181046",
+    "roleA": "Support",
+    "roleB": "TestRole",
+    "Bot": "Bot",
+    "ticketCat": "ticket-test",
+    "newTicket": "Thanks for creating a ticket! Our support team will be with you shortly"
 
 }

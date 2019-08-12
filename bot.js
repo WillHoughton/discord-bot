@@ -31,17 +31,29 @@ client.on('ready', function(evt) {
                 return;
             }
             if (message.content.startsWith(config.prefix + "info")) {
-                i = require(`./commands/info`);
+                i = require(`./commands/info.js`);
                 i.run(client, message, args);
             } 
             if (message.content.startsWith(config.prefix + "avatar")) {
-                a = require(`./commands/avatar`);
+                a = require(`./commands/avatar.js`);
                 a.run(client, message, args);
             }
             if (message.content.startsWith(config.prefix + "ping")) {
-                p = require(`./commands/ping`);
+                p = require(`./commands/ping.js`);
                 p.run(client, message, args);
             }
+            if (message.content.startsWith(config.prefix + "new")) {
+                n = require(`./commands/new.js`);
+                n.run(client, message, args);
+            }
+            // if (message.content.startsWith(config.prefix + "say")) {
+            //     s = require(`./commands/say.js`);
+            //     s.run(client, message, args);
+            // }
+            // if (message.content.startsWith(config.prefix + "help" || client.user.tag)) {
+            //     h = require(`./commands/help.js`);
+            //     h.run(client,message,args);
+            // }
             else return;
         } catch (err) {
             console.error(err);
