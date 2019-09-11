@@ -1,0 +1,10 @@
+{
+    "commands": {
+        "ping": {
+            "id": "1",
+            "enabled": "true",
+            "command": "ping",
+            "response": "\":ping_pong: Pong! \" + Math.round(client.ping) + ' ms.'"
+        }
+    }
+}

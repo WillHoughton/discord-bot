@@ -15,9 +15,9 @@ client.on('ready', function(evt) {
     })
 })
     console.log('=================================');
-    console.log('    Logged in as ${client.user.tag}!');
+    console.log(`    Logged in as ${client.username}!`);
     console.log('    Developed by Will | Hoisting#2552');
-    console.log('    Copyright Protected 2018');
+    console.log('    Copyright Protected 2019');
     console.log('=================================');
 
     client.on("message", message => {
@@ -46,18 +46,32 @@ client.on('ready', function(evt) {
                 n = require(`./commands/new.js`);
                 n.run(client, message, args);
             }
-            // if (message.content.startsWith(config.prefix + "say")) {
-            //     s = require(`./commands/say.js`);
-            //     s.run(client, message, args);
-            // }
-            // if (message.content.startsWith(config.prefix + "help" || client.user.tag)) {
-            //     h = require(`./commands/help.js`);
-            //     h.run(client,message,args);
-            // }
+            if (message.content.startsWith(config.prefix + "say")) {
+                s = require(`./commands/say.js`);
+                s.run(client, message, args);
+            }
+            if (message.content.startsWith(config.prefix + "help")) {
+                h = require(`./commands/help.js`);
+                h.run(client,message,args);
+            }
+            if (message.content.startsWith(config.prefix + "ip")) {
+                i = require(`./commands/ip.js`);
+                i.run(client,message,args);
+            }
+            if (message.content.startsWith(config.prefix + "store")) {
+                h = require(`./commands/store.js`);
+                h.run(client,message,args);
+            }
+            if (message.content.startsWith(config.prefix + "forums")) {
+                h = require(`./commands/forums.js`);
+                h.run(client,message,args);
+            }
             else return;
         } catch (err) {
-            console.error(err);
+            message.channel.send({ embed: {
+                color: config.embedColor,
+                title: "Looks like this command is out of order."
+            }})
         }
     });
-
 client.login(secrets.token);
